@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace SimpleFactory
+namespace Template
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-            var db = Factory.CreateInstance("SqlServer");
-            db.Add();
+            Exam exam = new King();
+            exam.Questions();
         }
     }
 }
