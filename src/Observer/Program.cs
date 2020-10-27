@@ -6,7 +6,14 @@ namespace Observer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ISubject subject = new ConcreteSubject()
+            {
+                SubjectState = "hello"
+            };
+            IObserver observer = new ConcreteObserver(subject,"张三");
+            subject.Add(observer);
+            subject.SubjectState = "天塌了";
+            subject.Nofity();
         }
     }
 }
