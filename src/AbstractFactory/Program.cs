@@ -6,7 +6,9 @@ namespace AbstractFactory
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var sqlFactory = Factory.CreateInstance("sqlserver");
+            var order = sqlFactory.CreateOrderInstance();
+            order.Add();
         }
     }
 }
